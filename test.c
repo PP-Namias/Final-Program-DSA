@@ -321,7 +321,6 @@ void traverse2DArray() {
     clearScreen();
     printf("[ Traverse 2D Array Has Been Selected ]\n");
 
-
     int rows, columns;
 
     printf("ENTER NUMBER OF ROWS: ");
@@ -341,6 +340,14 @@ void traverse2DArray() {
     }
 
     int twoDArray[MAX_SIZE][MAX_SIZE];
+
+    printf("\nENTER ELEMENTS OF 2-D ARRAY:\n");
+
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < columns; ++j) {
+            scanf("%d", &twoDArray[i][j]);
+        }
+    }
 
     printf("\n2-D ARRAY BEFORE TRAVERSING:\n");
 
