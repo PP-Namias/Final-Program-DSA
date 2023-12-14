@@ -19,29 +19,32 @@ void clearScreen() {
 void pause() {
     printf("Press any key to continue...\n");
     getchar();
+    getchar();
 }
 
 void displayMenu() {
     printf("********** MENU **********\n");
-    printf("1. One-Dimensional Array\n");
-    printf("2. Two-Dimensional Array\n");
-    printf("3. Stack Using Array\n");
-    printf("0. Exit\n");
+    printf("[ 1 ] One-Dimensional Array\n");
+    printf("[ 2 ] Two-Dimensional Array\n");
+    printf("[ 3 ] Stack Using Array\n");
+    printf("[ 0 ] Exit\n");
     printf("Enter your choice: ");
 }
 
 void displayMenu1D() {
     int choice;
 
+    clearScreen();
+
     do {
         printf("********** MENU **********\n");
         printf("One-Dimensional Array Menu:\n");
-        printf("1. Array Index Composition\n");
-        printf("2. Traverse\n");
-        printf("3. Insert Sorted\n");
-        printf("4. Insert Unsorted and Remove Element\n");
-        printf("5. Merge Unsorted\n");
-        printf("0. Back\n");
+        printf("[ 1 ] Array Index Composition\n");
+        printf("[ 2 ] Traverse\n");
+        printf("[ 3 ] Insert Sorted\n");
+        printf("[ 4 ] Insert Unsorted and Remove Element\n");
+        printf("[ 5 ] Merge Unsorted\n");
+        printf("[ 0 ] Back\n");
         printf("Enter your choice: ");
 
         scanf("%d", &choice);
@@ -71,17 +74,21 @@ void displayMenu1D() {
                 break;
         }
     } while (choice != 0);
+    clearScreen();
+
 }
 
 void displayMenu2D() {
     int choice;
 
+    clearScreen();
+    
     do {
         printf("********** MENU **********\n");
         printf("Two-Dimensional Array Menu\n");
-        printf("1. Traverse\n");
-        printf("2. Transpose\n");
-        printf("0. Back\n");
+        printf("[ 1 ] Traverse\n");
+        printf("[ 2 ] Transpose\n");
+        printf("[ 0 ] Back\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
 
@@ -100,6 +107,7 @@ void displayMenu2D() {
                 break;
         }
     } while (choice != 0);
+    clearScreen();
 
 }
 
@@ -111,7 +119,8 @@ void displayArray() {
             printf(", ");
         }
     }
-    printf(" }\n");
+    printf(" }\n\n");
+    pause();
 }
 
 void arrayIndexComposition() {
@@ -136,6 +145,8 @@ void arrayIndexComposition() {
 
     size = index;
     displayArray();
+
+    clearScreen();
 }
 
 void traverse() {
@@ -159,6 +170,8 @@ void traverse() {
 
     size = elements;
     displayArray();
+
+    clearScreen();
 }
 
 void insertSorted() {
@@ -199,6 +212,8 @@ void insertSorted() {
     size++;
 
     displayArray();
+
+    clearScreen();
 }
 
 void insertUnsortedAndRemoveElement() {
@@ -255,6 +270,8 @@ void insertUnsortedAndRemoveElement() {
     } else {
         printf("Invalid location to remove element.\n");
     }
+
+    clearScreen();
 }
 
 void mergeUnsorted() {
@@ -296,16 +313,20 @@ void mergeUnsorted() {
     size = sizeA + sizeB;
 
     displayArray();
+
+    clearScreen();
 }
 
 void traverse2DArray() {
     clearScreen();
     printf("[ Traverse 2D Array Has Been Selected ]\n");
 
+
     int rows, columns;
 
     printf("ENTER NUMBER OF ROWS: ");
     scanf("%d", &rows);
+
     if (rows <= 0 || rows > MAX_SIZE) {
         printf("Invalid number of rows. Please enter a number between 1 and %d.\n", MAX_SIZE);
         return;
@@ -340,6 +361,8 @@ void traverse2DArray() {
     }
 
     pause();
+
+    clearScreen();
 }
 
 void transpose2DArray() {
@@ -393,6 +416,8 @@ void transpose2DArray() {
     }
 
     pause();
+
+    clearScreen();
 }
 
 void stackUsingArray() {
@@ -405,10 +430,10 @@ void stackUsingArray() {
 
     do {
         printf("\nSTACK USING ARRAY\n");
-        printf("1. PUSH\n");
-        printf("2. POP\n");
-        printf("3. DISPLAY\n");
-        printf("0. EXIT\n");
+        printf("[ 1 ] PUSH\n");
+        printf("[ 2 ] POP\n");
+        printf("[ 3 ] DISPLAY\n");
+        printf("[ 0 ] EXIT\n");
         printf("\nENTER OPTION: ");
         scanf("%d", &option);
 
@@ -421,7 +446,7 @@ void stackUsingArray() {
                 } else {
                     top++;
                     stack[top] = value;
-                    printf("VALUE INSERTED = { ");
+                    printf("VALUE INSERTED [%d] = { ", value);
                     for (int i = 0; i <= top; ++i) {
                         printf("%d", stack[i]);
                         if (i < top) {
@@ -459,7 +484,7 @@ void stackUsingArray() {
             default:
                 printf("Invalid option. Please enter a number between 1 - 3 and 0.\n");
         }
-    } while (option != 4);
+    } while (option != 0);
 
     pause();
 }
@@ -491,7 +516,7 @@ int main() {
                 break;
         }
 
-    } while (choice != 9);
+    } while (choice != 0);
 
     return 0;
 }
