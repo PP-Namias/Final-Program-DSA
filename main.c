@@ -1,3 +1,19 @@
+/*
+ * Group 4
+ *  Title	: Data Structures and Algorithms Final Program
+ *  Author  : @PP-Namias, @GianFungo, @RonanValencia, @KevinLlanes
+ *  Date	: December 15, 2023
+ * 
+ *  Members :
+ *  Valencia, Ronan Renz
+ *  Fungo, Gian
+ *  Capalac, Garvy
+ *  Llanes, Kevin 
+ *  Namias, Jhon Keneth
+ * 
+ *  https://github.com/PP-Namias/Final-Program-DSA
+*/
+
 #include<stdio.h>
 #include<conio.h>
 #include<stdlib.h>
