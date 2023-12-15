@@ -1,7 +1,7 @@
 /*
  * Group 4
  *  Title	: Data Structures and Algorithms Final Program
- *  Author  : @PP-Namias, @GianFungo, @RonanValencia, @KevinLlanes
+ *  Author  : @PP-Namias, @Kurosawa-Z, @27Ronan, @Meixii and @RensuGitHub
  *  Date	: December 15, 2023
  * 
  *  Members :
