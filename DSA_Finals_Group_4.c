@@ -40,6 +40,16 @@ void clearArray() {
     }
 }
 
+int getIntegerInput() {
+    int input;
+    while (scanf("%d", &input) != 1) {
+        // Clear the input buffer
+        while (getchar() != '\n');
+        printf("Invalid input. Please enter a valid number: ");
+    }
+    return input;
+}
+
 void pause() {
     printf("Press any key to continue...\n");
     getchar();
@@ -58,9 +68,13 @@ void displayMenu() {
 void displayMenu1D() {
     int choice;
 
-    clearScreen();
-
     do {
+        clearArray();
+        clearScreen();
+        displayMenu();
+
+        choice = getIntegerInput();
+
         printf("********** MENU **********\n");
         printf("One-Dimensional Array Menu:\n");
         printf("[ 1 ] Array Index Composition\n");
@@ -105,9 +119,14 @@ void displayMenu1D() {
 void displayMenu2D() {
     int choice;
 
-    clearScreen();
     
     do {
+        clearArray();
+        clearScreen();
+        displayMenu();
+
+        choice = getIntegerInput();
+
         printf("********** MENU **********\n");
         printf("Two-Dimensional Array Menu\n");
         printf("[ 1 ] Traverse\n");
@@ -475,7 +494,6 @@ void transpose2DArray() {
 }
 
 void stackUsingArray() {
-    clearScreen();
     printf("[ Stack Using Array Has Been Selected ]\n");
 
     int stack[MAX_SIZE];
@@ -483,6 +501,12 @@ void stackUsingArray() {
     int option, value;
 
     do {
+        clearArray();
+        clearScreen();
+        displayMenu();
+
+        option = getIntegerInput();
+        
         printf("\nSTACK USING ARRAY\n");
         printf(" [ 1 ] PUSH\n");
         printf(" [ 2 ] POP\n");
@@ -550,6 +574,12 @@ int main() {
         clearArray();
         clearScreen();
         displayMenu();
+
+        choice = getIntegerInput();
+        
+        clearArray();
+        clearScreen();
+        displayMenu();
         scanf("%d", &choice);
 
         switch (choice) {
@@ -575,109 +605,3 @@ int main() {
 
     return 0;
 }
-
-
-/*
-
-int main() {
-    int choice;
-
-    do {
-        clearScreen();
-        displayMenu();
-        scanf("%d", &choice);
-
-        switch (choice) {
-            case 1:
-                arrayIndexComposition();
-                break;
-            case 2:
-                traverse();
-                break;
-            case 3:
-                insertSorted();
-                break;
-            case 4:
-                insertUnsortedAndRemoveElement();
-                break;
-            case 5:
-                mergeUnsorted();
-                break;
-            case 6:
-                traverse2DArray();
-                break;
-            case 7:
-                transpose2DArray();
-                break;
-            case 8:
-                stackUsingArray();
-                break;
-            case 9:
-                printf("\nExiting the program! Thank you!\n");
-                break;
-            default:
-                printf("\nInvalid choice. Please enter a number between 1 and 9.\n");
-                pause();
-                break;
-        }
-
-    } while (choice != 9);
-
-    return 0;
-}
-
-*/
-
-// Archived:
-
-// Main Menu
-// do {
-    //     printf("\n\n********** MENU **********");
-    //     printf("\n1. Array Index Composition");
-    //     printf("\n2. Traverse");
-    //     printf("\n3. Insert Sorted");
-    //     printf("\n4. Insert Unsorted and Remove Element");
-    //     printf("\n5. Merge Unsorted");
-    //     printf("\n6. Traverse 2D Array");
-    //     printf("\n7. Transpose 2D Array");
-    //     printf("\n8. Stack Using Array");
-    //     printf("\n9. Exit");
-    //     printf("\n\nEnter your choice (1-9): ");
-    //     scanf("%d", &choice);
-
-    //     switch(choice) {
-    //         case 1:
-    //             arrayIndexComposition();
-    //             break;
-    //         case 2:
-    //             traverse(a, n);
-    //             break;
-    //         case 3:
-    //             insertSorted();
-    //             break;
-    //         case 4:
-    //             insertUnsortedRemoveElement();
-    //             break;
-    //         case 5:
-    //             mergeUnsorted();
-    //             break;
-    //         case 6:
-    //             traverse2D();
-    //             break;
-    //         case 7:
-    //             transpose2D();
-    //             break;
-    //         case 8:
-    //             stackUsingArray();
-    //             break;
-    //         case 9:
-    //             printf("\nExiting the program. Goodbye!");
-    //             exit(0);
-    //         default:
-    //             printf("\nInvalid choice. Please enter a number between 1 and 9.");
-    //     }
-
-    //     printf("\n\nPress any key to continue...");
-    //     getch(); // Wait for a key press before displaying the menu again
-
-    // } while(1); // Infinite loop to keep the program running until the user chooses to exit
