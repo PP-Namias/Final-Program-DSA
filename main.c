@@ -16,6 +16,12 @@ void clearScreen() {
     #endif
 }
 
+void clearArray() {
+    for (int i = 0; i < MAX_SIZE; ++i) {
+        array[i] = 0; 
+    }
+}
+
 void pause() {
     printf("Press any key to continue...\n");
     getchar();
@@ -112,15 +118,14 @@ void displayMenu2D() {
 }
 
 void displayArray() {
-    printf("ELEMENTS INSIDE THE ARRAY ARE: { ");
+    printf("\n ELEMENTS INSIDE THE ARRAY ARE: { ");
     for (int i = 0; i < size; ++i) {
         printf("%d", array[i]);
         if (i < size - 1) {
             printf(", ");
         }
     }
-    printf(" }\n\n");
-    pause();
+    printf(" }\n\n ");
 }
 
 void arrayIndexComposition() {
@@ -129,11 +134,11 @@ void arrayIndexComposition() {
 
     int index;
 
-    printf("ENTER ARRAY INDEX: ");
+    printf(" ENTER ARRAY INDEX: ");
     scanf("%d", &index);
 
     if (index < 0 || index >= MAX_SIZE) {
-        printf("Invalid index. Please choose a valid index between 0 and %d.\n", MAX_SIZE - 1);
+        printf(" Invalid index. Please choose a valid index between 0 and %d.\n", MAX_SIZE - 1);
         return;
     }
 
@@ -146,6 +151,10 @@ void arrayIndexComposition() {
     size = index;
     displayArray();
 
+    pause();
+    
+    clearArray();
+
     clearScreen();
 }
 
@@ -155,11 +164,11 @@ void traverse() {
 
     int elements;
 
-    printf("ENTER ELEMENTS OF AN ARRAY: ");
+    printf(" ENTER ELEMENTS OF AN ARRAY: ");
     scanf("%d", &elements);
 
     if (elements <= 0 || elements > MAX_SIZE) {
-        printf("Invalid number of elements. Please enter a number between 1 and %d.\n", MAX_SIZE);
+        printf(" Invalid number of elements. Please enter a number between 1 and %d.\n", MAX_SIZE);
         return;
     }
 
@@ -171,6 +180,10 @@ void traverse() {
     size = elements;
     displayArray();
 
+    pause();
+
+    clearArray();
+
     clearScreen();
 }
 
@@ -181,11 +194,11 @@ void insertSorted() {
     int index;
     int item;
 
-    printf("ENTER ARRAY INDEX: ");
+    printf(" ENTER ARRAY INDEX: ");
     scanf("%d", &index);
 
     if (index < 0 || index >= MAX_SIZE) {
-        printf("Invalid index. Please choose a valid index between 0 and %d.\n", MAX_SIZE - 1);
+        printf(" Invalid index. Please choose a valid index between 0 and %d.\n", MAX_SIZE - 1);
         return;
     }
 
@@ -213,6 +226,10 @@ void insertSorted() {
 
     displayArray();
 
+    pause();
+    
+    clearArray();
+
     clearScreen();
 }
 
@@ -222,16 +239,16 @@ void insertUnsortedAndRemoveElement() {
 
     int index;
 
-    printf("ENTER ARRAY INDEX: ");
+    printf(" ENTER ARRAY INDEX: ");
     scanf("%d", &index);
 
     if (index < 0 || index >= MAX_SIZE) {
-        printf("Invalid index. Please choose a valid index between 0 and %d.\n", MAX_SIZE - 1);
+        printf(" Invalid index. Please choose a valid index between 0 and %d.\n", MAX_SIZE - 1);
         return;
     }
 
     for (int i = 0; i <= index -1; ++i) {
-        printf("\nENTER UN-SORTED ELEMENTS OF AN ARRAY [%d]: ", i + 1);
+        printf("\n ENTER UN-SORTED ELEMENTS OF AN ARRAY [%d]: ", i + 1);
         scanf("%d", &array[i]);
     }
 
@@ -240,7 +257,7 @@ void insertUnsortedAndRemoveElement() {
 
     int valueToInsert;
 
-    printf("\nENTER VALUE TO INSERT: ");
+    printf("\n ENTER VALUE TO INSERT: ");
     scanf("%d", &valueToInsert);
 
     // Insert value while keeping the array sorted
@@ -255,7 +272,7 @@ void insertUnsortedAndRemoveElement() {
 
     displayArray();
 
-    printf("\nENTER LOCATION TO REMOVE ELEMENT: ");
+    printf("\n ENTER LOCATION TO REMOVE ELEMENT: ");
     int locationToRemove;
     scanf("%d", &locationToRemove);
 
@@ -268,8 +285,12 @@ void insertUnsortedAndRemoveElement() {
 
         displayArray();
     } else {
-        printf("Invalid location to remove element.\n");
+        printf(" Invalid location to remove element.\n");
     }
+
+    pause();
+
+    clearArray();
 
     clearScreen();
 }
@@ -280,11 +301,11 @@ void mergeUnsorted() {
 
     int indexA, indexB;
 
-    printf("ENTER ARRAY INDEX A: ");
+    printf(" ENTER ARRAY INDEX A: ");
     scanf("%d", &indexA);
 
     if (indexA < 0 || indexA >= MAX_SIZE) {
-        printf("Invalid index for Array A. Please choose a valid index between 0 and %d.\n", MAX_SIZE - 1);
+        printf(" Invalid index for Array A. Please choose a valid index between 0 and %d.\n", MAX_SIZE - 1);
         return;
     }
 
@@ -300,7 +321,7 @@ void mergeUnsorted() {
     scanf("%d", &indexB);
 
     if (indexB < 0 || indexB >= MAX_SIZE) {
-        printf("Invalid index for Array B. Please choose a valid index between 0 and %d.\n", MAX_SIZE - 1);
+        printf(" Invalid index for Array B. Please choose a valid index between 0 and %d.\n", MAX_SIZE - 1);
         return;
     }
 
@@ -314,6 +335,10 @@ void mergeUnsorted() {
 
     displayArray();
 
+    pause();
+
+    clearArray();
+
     clearScreen();
 }
 
@@ -323,25 +348,25 @@ void traverse2DArray() {
 
     int rows, columns;
 
-    printf("ENTER NUMBER OF ROWS: ");
+    printf(" ENTER NUMBER OF ROWS: ");
     scanf("%d", &rows);
 
     if (rows <= 0 || rows > MAX_SIZE) {
-        printf("Invalid number of rows. Please enter a number between 1 and %d.\n", MAX_SIZE);
+        printf(" Invalid number of rows. Please enter a number between 1 and %d.\n", MAX_SIZE);
         return;
     }
 
-    printf("ENTER NUMBER OF COLUMNS: ");
+    printf(" ENTER NUMBER OF COLUMNS: ");
     scanf("%d", &columns);
 
     if (columns <= 0 || columns > MAX_SIZE) {
-        printf("Invalid number of columns. Please enter a number between 1 and %d.\n", MAX_SIZE);
+        printf(" Invalid number of columns. Please enter a number between 1 and %d.\n", MAX_SIZE);
         return;
     }
 
     int twoDArray[MAX_SIZE][MAX_SIZE];
 
-    printf("\nENTER ELEMENTS OF 2-D ARRAY:\n");
+    printf("\n ENTER ELEMENTS OF 2-D ARRAY:\n");
 
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < columns; ++j) {
@@ -349,7 +374,7 @@ void traverse2DArray() {
         }
     }
 
-    printf("\n2-D ARRAY BEFORE TRAVERSING:\n");
+    printf("\n 2-D ARRAY BEFORE TRAVERSING:\n");
 
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < columns; ++j) {
@@ -358,7 +383,7 @@ void traverse2DArray() {
         printf("\n");
     }
 
-    printf("\n2-D ARRAY AFTER TRAVERSING:\n");
+    printf("\n 2-D ARRAY AFTER TRAVERSING:\n");
 
     for (int j = 0; j < columns; ++j) {
         for (int i = 0; i < rows; ++i) {
@@ -368,6 +393,8 @@ void traverse2DArray() {
     }
 
     pause();
+
+    clearArray();
 
     clearScreen();
 }
@@ -378,25 +405,25 @@ void transpose2DArray() {
 
     int rows, columns;
 
-    printf("ENTER NUMBER OF ROWS: ");
+    printf(" ENTER NUMBER OF ROWS: ");
     scanf("%d", &rows);
 
     if (rows <= 0 || rows > MAX_SIZE) {
-        printf("Invalid number of rows. Please enter a number between 1 and %d.\n", MAX_SIZE);
+        printf(" Invalid number of rows. Please enter a number between 1 and %d.\n", MAX_SIZE);
         return;
     }
 
-    printf("ENTER NUMBER OF COLUMNS: ");
+    printf(" ENTER NUMBER OF COLUMNS: ");
     scanf("%d", &columns);
 
     if (columns <= 0 || columns > MAX_SIZE) {
-        printf("Invalid number of columns. Please enter a number between 1 and %d.\n", MAX_SIZE);
+        printf(" Invalid number of columns. Please enter a number between 1 and %d.\n", MAX_SIZE);
         return;
     }
 
     int twoDArray[MAX_SIZE][MAX_SIZE];
 
-    printf("\nENTER ELEMENTS OF 2-D ARRAY:\n");
+    printf("\n ENTER ELEMENTS OF 2-D ARRAY:\n");
 
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < columns; ++j) {
@@ -404,7 +431,7 @@ void transpose2DArray() {
         }
     }
 
-    printf("\n2-D ARRAY BEFORE TRANSPOSING:\n");
+    printf("\n 2-D ARRAY BEFORE TRANSPOSING:\n");
 
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < columns; ++j) {
@@ -413,7 +440,7 @@ void transpose2DArray() {
         printf("\n");
     }
 
-    printf("\n2-D ARRAY AFTER TRANSPOSING:\n");
+    printf("\n 2-D ARRAY AFTER TRANSPOSING:\n");
 
     for (int j = 0; j < columns; ++j) {
         for (int i = 0; i < rows; ++i) {
@@ -423,6 +450,8 @@ void transpose2DArray() {
     }
 
     pause();
+
+    clearArray();
 
     clearScreen();
 }
@@ -437,10 +466,10 @@ void stackUsingArray() {
 
     do {
         printf("\nSTACK USING ARRAY\n");
-        printf("[ 1 ] PUSH\n");
-        printf("[ 2 ] POP\n");
-        printf("[ 3 ] DISPLAY\n");
-        printf("[ 0 ] EXIT\n");
+        printf(" [ 1 ] PUSH\n");
+        printf(" [ 2 ] POP\n");
+        printf(" [ 3 ] DISPLAY\n");
+        printf(" [ 0 ] EXIT\n");
         printf("\nENTER OPTION: ");
         scanf("%d", &option);
 
@@ -467,7 +496,7 @@ void stackUsingArray() {
                 if (top == -1) {
                     printf("Stack Underflow! Cannot pop from an empty stack.\n");
                 } else {
-                    printf("VALUE POPPED = { %d }\n", stack[top]);
+                    printf("VALUE POPPED = [%d]\n", stack[top]);
                     top--;
                 }
                 break;
@@ -500,6 +529,7 @@ int main() {
     int choice;
 
     do {
+        clearArray();
         clearScreen();
         displayMenu();
         scanf("%d", &choice);
