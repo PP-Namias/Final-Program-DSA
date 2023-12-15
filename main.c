@@ -40,6 +40,16 @@ void clearArray() {
     }
 }
 
+int getIntegerInput() {
+    int input;
+    while (scanf("%d", &input) != 1) {
+        // Clear the input buffer
+        while (getchar() != '\n');
+        printf("Invalid input. Please enter a valid number: ");
+    }
+    return input;
+}
+
 void pause() {
     printf("Press any key to continue...\n");
     getchar();
@@ -58,9 +68,13 @@ void displayMenu() {
 void displayMenu1D() {
     int choice;
 
-    clearScreen();
-
     do {
+        clearArray();
+        clearScreen();
+        displayMenu();
+
+        choice = getIntegerInput();
+
         printf("********** MENU **********\n");
         printf("One-Dimensional Array Menu:\n");
         printf("[ 1 ] Array Index Composition\n");
@@ -105,9 +119,14 @@ void displayMenu1D() {
 void displayMenu2D() {
     int choice;
 
-    clearScreen();
     
     do {
+        clearArray();
+        clearScreen();
+        displayMenu();
+
+        choice = getIntegerInput();
+
         printf("********** MENU **********\n");
         printf("Two-Dimensional Array Menu\n");
         printf("[ 1 ] Traverse\n");
@@ -475,7 +494,6 @@ void transpose2DArray() {
 }
 
 void stackUsingArray() {
-    clearScreen();
     printf("[ Stack Using Array Has Been Selected ]\n");
 
     int stack[MAX_SIZE];
@@ -483,6 +501,12 @@ void stackUsingArray() {
     int option, value;
 
     do {
+        clearArray();
+        clearScreen();
+        displayMenu();
+
+        option = getIntegerInput();
+        
         printf("\nSTACK USING ARRAY\n");
         printf(" [ 1 ] PUSH\n");
         printf(" [ 2 ] POP\n");
@@ -547,6 +571,12 @@ int main() {
     int choice;
 
     do {
+        clearArray();
+        clearScreen();
+        displayMenu();
+
+        choice = getIntegerInput();
+        
         clearArray();
         clearScreen();
         displayMenu();
