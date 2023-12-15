@@ -1,8 +1,9 @@
-/*
+/**
  * Group 4
  *  Title	: Data Structures and Algorithms Final Program
- *  Author  : @PP-Namias, @Kurosawa-Z, @27Ronan, @Meixii and @RensuGitHub
+ *  @author : @PP-Namias, @Kurosawa-Z, @27Ronan, @Meixii and @RensuGitHub
  *  Date	: December 15, 2023
+ *  Subject	: Data Structures and Algorithms
  * 
  *  Members :
  *  Valencia, Ronan Renz
@@ -12,6 +13,7 @@
  *  Namias, Jhon Keneth
  * 
  *  https://github.com/PP-Namias/Final-Program-DSA
+ *  Licensed under the MIT
 */
 
 #include<stdio.h>
