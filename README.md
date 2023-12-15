@@ -27,28 +27,22 @@
 
 ## Table of Contents
 - [Features](#features)
-  - [Super Admin](#super-admin)
 - [Flowchart](#flowchart)
 - [Programming Paradigms & Principles Used](#programming-paradigms--principles-used)
 - [How to Use](#how-to-use)
-- [Pros](#pros)
-- [Cons](#cons)
+- [Pros and Cons](#pros-and-cons)
 - [Technologies Used](#technologies-used)
 - [Work-in-Progress](#work-in-progress)
   - [Upcoming Features](#upcoming-features)
 - [License](#license)
 
 ## Features
-- **Array Index Composition:** Demonstrates the concept of array index composition.
-- **Traverse Arrays:** Navigates through arrays, showcasing traversal techniques.
+- **Array Index Composition:** Illustrates the concept of array index composition.
+- **Traverse Arrays:** Demonstrates traversal techniques for one-dimensional arrays.
 - **Insertion and Sorting:** Allows users to insert and sort elements in arrays.
 - **Merge Unsorted Arrays:** Merges unsorted arrays seamlessly.
 - **2D Array Operations:** Performs operations like traversal and transposition on 2D arrays.
 - **Stack Implementation:** Demonstrates a stack using arrays for efficient data structure handling.
-
-### Super Admin
-- **Admin Privileges:** Access to advanced features and settings for enhanced control.
-- **User Management:** Add, modify, or remove user accounts for secure access.
 
 ## Flowchart
 <p align="center">
@@ -65,11 +59,12 @@ This guide assumes a basic understanding of the C programming language. For any 
 
 Feel free to further customize this to match the specific details of your project.
 
-## Pros:
+## Pros and Cons
+### Pros
 - Provides hands-on experience with various data structures and algorithms.
 - A useful educational resource for understanding procedural programming concepts.
 
-## Cons:
+### Cons
 - Some minor issues are yet to be addressed.
 
 ## Technologies Used
